@@ -1,50 +1,42 @@
-<p align="center">
-<img src="https://i.imgur.com/Clzj7Xs.png" alt="osTicket logo"/>
-</p>
+# osTicket: End-to-End Ticketing System Deployment
 
-<h1>osTicket - Ticket Lifecycle: Intake Through Resolution</h1>
-This tutorial outlines the lifecycle of a ticket from intake to resolution within the open-source help desk ticketing system osTicket.<br />
+## Objective
+The goal of this lab was to deploy and configure an IT Service Management (ITSM) solution to handle user support requests. This project demonstrates the ability to manage the full lifecycle of a ticket—from submission to resolution—in a simulated corporate environment.
 
+## Environment
+* **Platform:** osTicket (Open-source ITSM)
+* **Infrastructure:** VirtualBox (Internal Network)
+* **Operating System:** Windows Server / Windows 10)
+* **Stack:** PHP, MySQL/MariaDB, Apache/IIS
 
-<h2>Environments and Technologies Used</h2>
+## Lab Workflow: Step-by-Step
 
-- Microsoft Azure (Virtual Machines/Compute)
-- Remote Desktop
-- Internet Information Services (IIS)
+### 1. Infrastructure Preparation
+* Installed and configured the web server (Apache/IIS) and database management system (MySQL).
+* Verified PHP requirements to ensure compatibility with the osTicket core files.
+* Configured VirtualBox network settings to ensure the VM remained isolated yet reachable for testing.
 
-<h2>Operating Systems Used </h2>
+### 2. osTicket Installation
+* Downloaded and extracted the osTicket core files to the web root directory.
+* Configured the `ost-config.php` file and established a connection to the MySQL database.
+* Performed the initial web-based setup to initialize the system and create the administrative account.
 
-- Windows 10</b> (21H2)
+### 3. Help Desk Configuration
+* **Agents & Roles:** Defined IT staff roles and permissions to ensure least privilege access.
+* **Help Topics:** Categorized support requests (e.g., "Hardware Issue," "Software Installation," "Password Reset") to automate routing.
+* **SLA Policies:** Established Service Level Agreements to define response times for "Priority 1" vs. "Normal" tickets.
 
-<h2>Ticket Lifecycle Stages</h2>
+### 4. Ticket Lifecycle Simulation
+* **User Submission:** Submitted test tickets from a secondary VM to simulate an end-user experience.
+* **Routing & Escalation:** Verified that tickets were automatically routed to the correct department based on the Help Topic.
+* **Resolution:** Performed the full lifecycle of a ticket: *Open -> Assignment -> Internal Note -> Resolution -> Closing.*
 
-- Intake
-- Assignment and Communication
-- Working the Issue
-- Resolution
+## Proof of Implementation
+*(Replace the following with your actual file names)*
+* **Admin Dashboard:** ![Admin Dashboard](admin-dashboard.png)
+* **Ticket View:** ![Ticket View](agent-view.png)
 
-<h2>Lifecycle Stages</h2>
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+## Key Learnings
+* **ITSM Fundamentals:** Gained hands-on experience in how ticketing systems act as the "source of truth" for IT departments.
+* **Troubleshooting:** Resolved database connectivity errors by validating user permissions in MySQL.
+* **Process Automation:** Understood the impact of SLAs and Help Topics on reducing mean time to resolution (MTTR).
